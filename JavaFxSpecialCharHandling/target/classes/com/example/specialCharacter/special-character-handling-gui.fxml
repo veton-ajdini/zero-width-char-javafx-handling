@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ScrollPane?>
+<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.specialCharacter.SpecialCharacterController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <!-- Intro text instructing what to do -->
+    <HBox alignment="CENTER_LEFT">
+        <Label text="Insert first and second part text: " wrapText="true">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <!-- Text fields that take in the word to be processed, with button that starts processing -->
+    <HBox alignment="CENTER_LEFT" spacing="20.0">
+        <TextField fx:id="firstPartText" promptText="first part" text="firstpart/"/>
+        <Label text="(special character)"/>
+        <TextField fx:id="secondPartText" promptText="second part" text="secondpart"/>
+        <Button text="Generate" onAction="#onGenerateButtonClick"/>
+    </HBox>
+    <Separator maxWidth="600"/>
+
+    <!-- Buttons to change the font size of the generated text for the examples -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Adjust font size: ">
+            <font>
+                <Font size="16"/>
+            </font>
+        </Label>
+        <Button text="-" onAction="#onDecrementFontButton" prefWidth="25"/>
+        <Button text="+" onAction="#onIncrementFontButton" prefWidth="25"/>
+    </HBox>
+
+    <!-- Buttons to change the width of the generated text box -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Adjust width of text box: ">
+            <font>
+                <Font size="16"/>
+            </font>
+        </Label>
+        <Button text="-" onAction="#onDecrementTextBoxWidthButton" prefWidth="25"/>
+        <Button text="+" onAction="#onIncrementTextBoxWidthButton" prefWidth="25"/>
+    </HBox>
+
+    <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent">
+        <padding>
+            <Insets right="-20"/>
+        </padding>
+
+        <!-- List of different special characters and examples of how they behave on the given text -->
+        <!--  THIN SPACE -->
+        <VBox spacing="30" alignment="CENTER_LEFT">
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="THIN SPACE">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+2009"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="thinSpaceLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  HAIR SPACE -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="HAIR SPACE">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+200A"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="hairSpaceLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  MONGOLIAN VOWEL SEPARATOR -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="MONGOLIAN VOWEL SEPARATOR">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+180E"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="mongolianVowelSeparatorLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  ZERO WIDTH SPACE -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="ZERO WIDTH SPACE">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+200B"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="zeroWidthSpaceLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  ZERO WIDTH NON-JOINER -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="ZERO WIDTH NON-JOINER">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+200C"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="zeroWidthNonJoinerLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  ZERO WIDTH JOINER -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="ZERO WIDTH JOINER">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+200D"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="zeroWidthJoinerLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  PUNCTUATION SPACE -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="PUNCTUATION SPACE">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+2008"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="punctuationSpaceLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  MEDIUM MATH SPACE -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="MEDIUM MATHEMATICAL SPACE">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+200F"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="mediumMathSpaceLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+
+            <!--  SIX PER EM SPACE -->
+            <HBox alignment="CENTER_LEFT" spacing="40" minHeight="-Infinity">
+                <VBox spacing="10" alignment="CENTER_LEFT" minWidth="240" maxHeight="240">
+                    <Label text="SIX PER EM SPACE">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    <Label text="Unicode: U+2006"/>
+                </VBox>
+                <Separator orientation="VERTICAL" maxHeight="30"/>
+                <Label fx:id="sixPerEmSpaceLabel" prefWidth="100" wrapText="true"
+                       style="-fx-background-color: white;
+               -fx-background-radius: 3;
+               -fx-border-color: gray;
+               -fx-border-width: 1;
+               -fx-border-radius: 3;
+               -fx-padding: 5"/>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+</VBox>
